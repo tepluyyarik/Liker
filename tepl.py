@@ -24,10 +24,10 @@ class Human:
         self.money += salary
         print(f"Сьогодні працюємо. Заробили {salary}$")
 
-    def buycar(self, car_price):
+    def buycar(self, car_price, model):
         if self.money >= car_price:
             self.money -= car_price
-            self.car = model("Toyota")
+            self.car = Car(model)
             print(f"{self.name} купив авто!")
         else:
             print(f"Тобі не вистачає {car_price - self.money}$")
@@ -68,7 +68,7 @@ class Human:
         print(f" ---- День №{day} ----")
         if self.money > 6000 and self.car is None:
             self.buycar(5000, "Toyota")
-            self.money -= 5000
+            self.money - 5000
         self.work()
         self.shoping()
         self.eat()
